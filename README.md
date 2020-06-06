@@ -4,11 +4,14 @@
 
 The first two of these calls return Tuesday, the last Thursday!
 
-weekdays(as.POSIXct(df$Date))
-weekdays(as.Date(df$Date))
-weekdays(dmy_hms(paste(df$Date, df$Time))) #dmy_hms from Lubridate dayMonthYear etc
+####Unordered list (-)
 
-NOt got to the bottom of this yet!
+-weekdays(as.POSIXct(df$Date))
+-weekdays(as.Date(df$Date))
+-weekdays(dmy_hms(paste(df$Date, df$Time))) #dmy_hms from Lubridate dayMonthYear etc
+
+Not got to the bottom of this yet! The problem seems to be that as.Date(df$date) gives 0001-02-20, and the day is Tuesday!!
+SO, converting these particular dates is not sensible using as.Date....still not sure why.
 
 
 This assignment uses data from
