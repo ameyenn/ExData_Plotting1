@@ -1,5 +1,16 @@
 ## Introduction
 
+#I found the plotting aspects simple, but it took some time to understand the date/time variable concept. Using the Date variable and weekdays(as.Date(rf$Date) the days were shown as Tuesday and Wednesday. On conversion to a datatime variable the days were as requried Thursday and Friday in UTC (POSIXct format). 
+
+The first two of these calls return Tuesday, the last Thursday!
+
+weekdays(as.POSIXct(df$Date))
+weekdays(as.Date(df$Date))
+weekdays(dmy_hms(paste(df$Date, df$Time))) #dmy_hms from Lubridate dayMonthYear etc
+
+NOt got to the bottom of this yet!
+
+
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
